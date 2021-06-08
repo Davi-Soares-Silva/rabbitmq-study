@@ -1,21 +1,18 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "dist",
     "module": "commonjs",
     "target": "es2019",
     "esModuleInterop": true,
-    "moduleResolution": "node",
-    "allowJs": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",
+    "sourceMap": true,
+    "rootDirs": ["src", "tests"],
+    "baseUrl": "src",
+    "paths": {
+      "@/tests/*": ["../tests/*"],
+      "@/*": ["*"]
+    }
   },
-  "include": [
-    "src/**/*.ts",
-    "tests/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    ".vscode"
-  ]
+  "include": ["src", "tests"],
+  "exclude": []
 }
+ 

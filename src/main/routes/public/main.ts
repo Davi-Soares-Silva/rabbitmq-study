@@ -1,10 +1,10 @@
 import { adaptRoute } from '../../adapters/adaptRoute';
 import { Router } from 'express';
-import { makeMainController } from '../../../main/factories/controllers/make-main-controller';
+import { makeSendMessageController } from '../../factories/controllers/make-send-message-controller';
 
 export default (routes: Router) => {
   routes.post(
     '/main',
-    adaptRoute(makeMainController()),
+    adaptRoute(makeSendMessageController()),
   )
 }

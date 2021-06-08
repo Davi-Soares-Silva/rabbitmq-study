@@ -14,10 +14,10 @@ export function adaptRoute(controller: Controller) {
 
     const httpResponse = await controller.handle(httpRequest);
 
-    if (httpResponse?.headers) {
+    if (httpResponse.headers) {
       res.set(httpResponse.headers);
     }
 
-    return res.status(200).json('birrr');
+    return res.status(httpResponse.statusCode).json(httpResponse.body);
   };
 }
